@@ -1,21 +1,32 @@
 <template>
-  <div id="app">
-    <div class="pure-menu">
-      <span class="pure-menu-heading">Geeky Getaway</span>
-      <ul class="pure-menu-list">
-        <li class="pure-menu-item">
-          <router-link to="/" class="pure-menu-link">Home</router-link>
-        </li>
-        <li class="pure-menu-item">
-          <router-link to="/cartpage" class="pure-menu-link">My Cart</router-link>
-        </li>
-      </ul>
-    </div>
-    <div class="content">
-      <router-view />
-    </div>
+<div id="app">
+  <div class="pure-menu">
+    <span class="pure-menu-heading">Geeky Getaway</span>
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item">
+        <router-link to="/" class="pure-menu-link">Home</router-link>
+      </li>
+      <li class="pure-menu-item">
+        <router-link to="/cartpage" class="pure-menu-link">My Cart <i class="fa fa-shopping-cart"></i> ({{cartAmount}})</router-link>
+      </li>
+    </ul>
   </div>
+  <div class="content">
+    <router-view />
+  </div>
+</div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  computed: {
+    cartAmount() {
+      return this.$store.state.totalAmount;
+    },
+  }
+}
+</script>
 
 <style>
 /* https://color.adobe.com/Ventana-Azul-color-theme-2159606/?showPublished=true */

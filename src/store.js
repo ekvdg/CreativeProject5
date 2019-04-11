@@ -8,8 +8,10 @@ export default new Vuex.Store({
   state: {
     user: null,
     items: [],
+    totalPrice: 0,
+    totalAmount: 0,
     productList: [{
-      id:'0',
+      id: '0',
       name: 'Atom Shirt',
       price: 19.99,
       quantity: 0
@@ -62,6 +64,12 @@ export default new Vuex.Store({
     setItems(state, items) {
       state.items = items;
     },
+    setPrice(state, price) {
+      state.totalPrice = price;
+    },
+    setAmount(state, amount) {
+      state.totalAmount = amount;
+    }
   },
   actions: {
     async register(context, data) {
@@ -103,6 +111,8 @@ export default new Vuex.Store({
     async addItem(context, data) {
       try {
         await axios.post("/api/items", data);
+        increasePrice(data);
+        increaseAmount(data);
         return "";
       } catch (error) {
         return error.response.data.message;
@@ -116,6 +126,16 @@ export default new Vuex.Store({
       } catch (error) {
         return "";
       }
+    },
+    increasePrice(data) {
+      let price = (data.price * data.quantity);
+      price = this.$store.state.totalPrice + price;
+      this.$store.commit('setPrice', price);
+    },
+    increaseAmount(data) {
+      let amount = data.quantity;
+      amount = this.$store.state.totalAmount + amount;
+      this.$store.commit('setAmount', amount);
     },
   }
 })
