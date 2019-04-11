@@ -4,7 +4,7 @@
       <div id class="container menu padding-32 white">
 
           <h1><b>{{item.name}}</b>
-            <span class="right tag dark-grey round">${{item.price * item.quantity}}</span>
+            <span class="right tag dark-grey round">${{Math.round((item.price * item.quantity) * 100) / 100}}</span>
             <br><br>
             <span class="right">
               <button v-on:click="addToQuantity(item.id)"><i class="fa fa-arrow-circle-up"></i></button>
