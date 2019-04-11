@@ -139,11 +139,9 @@ export default {
   name: 'ItemGallery',
   methods: {
     deleteItem(id) {
-      console.log("EMIT DELETE");
       this.$emit('deleteItem', id);
     },
     addItem(id) {
-      console.log("EMIT ADD");
       this.$emit('addItem', id);
     }
   }

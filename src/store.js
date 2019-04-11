@@ -108,6 +108,14 @@ export default new Vuex.Store({
         return error.response.data.message;
       }
     },
+    async updateItem(context, data, id) {
+      try {
+        await axios.put("/api/items" + id, data);
+        return "";
+      } catch (error) {
+        return error.response.data.message;
+      }
+    },
     async deleteItem(context, id) {
       try {
         await axios.delete("/api/items" + id);
