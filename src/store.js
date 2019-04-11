@@ -121,6 +121,7 @@ export default new Vuex.Store({
     async deleteItem(context, id) {
       try {
         await axios.delete("/api/items" + id);
+
         return "";
       } catch (error) {
         return error.response.data.message;
@@ -153,5 +154,23 @@ export default new Vuex.Store({
       amount = this.$store.state.totalAmount + amount;
       this.$store.commit('setAmount', amount);
     },
+    decreasePrice(data) {
+      let price = (data.price * data.quantity);
+      price = this.$store.state.totalPrice - price;
+      if (price < 0) {
+        this.$store.commit('setPrice', 0);
+      } else {
+        this.$store.commit('setPrice', price);
+      }
+    },
+    decreaseAmount(data) {
+      let amount = data.quantity;
+      amount = this.$store.state.totalAmount - amount;
+      if (amount < 0) {
+        this.$store.commit('setAmount', 0);
+      } else {
+        this.$store.commit('setAmount', amount);
+      }
+    }
   }
 })
