@@ -128,9 +128,10 @@ export default new Vuex.Store({
     },
     async deleteItem(context, id) {
       try {
-        await axios.delete("/api/items/" + id);
-        // context.dispatch('decreasePrice', data);
-        // context.dispatch('decreaseAmount', data);
+        await axios.delete("/api/items" + id);
+        let data = context.state.productList[id];
+        context.dispatch('decreasePrice', data);
+        context.dispatch('decreaseAmount', data);
         return "";
       } catch (error) {
         return error.response.data.message;

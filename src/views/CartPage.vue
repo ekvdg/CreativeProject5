@@ -1,4 +1,15 @@
 <template>
+<<<<<<< HEAD
+<div>
+  <div v-if="user">
+    <div class="header">
+      <div>
+        <h1>{{user.name}}</h1>
+      </div>
+      <div>
+        <a href="#" @click="logout"><i class="fas fa-sign-out-alt"></i></a>
+      </div>
+=======
   <div>
     <div v-if="user">
       <div class="header">
@@ -16,8 +27,17 @@
       <p>If you would like to view or update your cart, please register for an account or login.</p>
       <router-link to="/register" class="pure-button">Register</router-link> or
       <router-link to="/login" class="pure-button">Login</router-link>
+>>>>>>> 846916bf3030e30a9e00fb385e45f744afee891d
     </div>
+    <escape-event @escape="escape"></escape-event>
+    <shopping-cart :items="items"></shopping-cart>
   </div>
+  <div v-else>
+    <p>If you would like to upload photos, please register for an account or login.</p>
+    <router-link to="/register" class="pure-button">Register</router-link> or
+    <router-link to="/login" class="pure-button">Login</router-link>
+  </div>
+</div>
 </template>
 
 <script>
