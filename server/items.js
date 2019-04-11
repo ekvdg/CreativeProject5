@@ -44,7 +44,6 @@ router.put('/', auth.verifyToken, User.verify, async(req, res) =>{
       item.quantity = 0;
       res.send(false);
     } else {
-      console.log("SAVE");
       await item.save();
       res.send(true);
     }

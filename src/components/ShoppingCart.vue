@@ -22,17 +22,22 @@
 
 export default {
   name: 'shoppingcart',
-  props: {
-    items: Array
+  async created() {
+    await this.$store.dispatch("getItems");
+  },
+  computed: {
+    items() {
+      return this.$store.state.items;
+    }
   },
   methods: {
-    addToQuantity(id) {
+    async addToQuantity(id) {
       this.$emit('addOne', id);
     },
-    removeFromQuantity(id) {
+    async removeFromQuantity(id) {
       this.$emit('removeOne', id);
     },
-    deleteItem(id) {
+    async deleteItem(id) {
       this.$emit('deleteItem', id);
     }
   }

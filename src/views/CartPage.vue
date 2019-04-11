@@ -10,10 +10,10 @@
         </div>
       </div>
       <escape-event @escape="escape"></escape-event>
-      <shopping-cart :items="items" @addOne="addToQuantity" @removeOne="removeFromQuantity" @deleteItem="deleteItem"></shopping-cart>
+      <shopping-cart @addOne="addToQuantity" @removeOne="removeFromQuantity" @deleteItem="deleteItem"></shopping-cart>
     </div>
     <div v-else>
-      <p>If you would like to upload photos, please register for an account or login.</p>
+      <p>If you would like to view or update your cart, please register for an account or login.</p>
       <router-link to="/register" class="pure-button">Register</router-link> or
       <router-link to="/login" class="pure-button">Login</router-link>
     </div>
@@ -56,18 +56,18 @@ export default {
       }
     },
     async addToQuantity(id) {
-      console.log("ADD");
       this.$store.dispatch("updateItem", {
         quantity: 1,
         id: id
       });
+      await this.$store.dispatch("getItems");
     },
     async removeFromQuantity(id) {
-      console.log("REMOVE");
       this.$store.dispatch("updateItem", {
         quantity: -1,
         id: id
       });
+      await this.$store.dispatch("getItems");
     },
     async deleteItem(id) {
       await this.$store.dispatch("deleteItem", id);
