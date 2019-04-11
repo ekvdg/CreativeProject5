@@ -17,7 +17,7 @@ import EscapeEvent from '@/components/EscapeEvent.vue'
 import ItemGallery from '@/components/ItemGallery.vue'
 
 export default {
-  name: 'mypage',
+  name: 'home',
   components: {
     EscapeEvent,
     ItemGallery
@@ -49,11 +49,13 @@ export default {
     async addItem(id) {
       try {
         const item = await this.$store.dispatch("getItem", id);
+        console.log("CAKE");
+        console.log(item);
         await this.$store.dispatch("addItem", {
-          id: this.id,
+          id: id,
           name: item.name,
           price: item.price,
-          quantity: item.quantity,
+          quantity: 1,
         });
       } catch (error) {
         console.log(error);

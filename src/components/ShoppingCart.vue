@@ -21,12 +21,20 @@
 <script>
 
 export default {
-  name: 'ShoppingCart',
+  name: 'shoppingcart',
   props: {
     items: Array
   },
   methods: {
-
+    addToQuantity(id) {
+      this.$emit('addOne', id);
+    },
+    removeFromQuantity(id) {
+      this.$emit('removeOne', id);
+    },
+    deleteItem(id) {
+      this.$emit('deleteItem', id);
+    }
   }
 }
 </script>
