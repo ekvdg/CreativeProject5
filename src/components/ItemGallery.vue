@@ -143,6 +143,7 @@ export default {
       this.$emit('deleteItem', id);
     },
     addItem(id) {
+      console.log("EMIT ADD");
       this.$emit('addItem', id);
     }
   }

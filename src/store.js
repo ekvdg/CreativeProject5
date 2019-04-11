@@ -128,6 +128,7 @@ export default new Vuex.Store({
         return error.response.data.message;
       }
     },
+<<<<<<< HEAD
     // async getItem(context, id) {
     //   console.log("MANGO");
     //   try {
@@ -136,6 +137,15 @@ export default new Vuex.Store({
     //     return null;
     //   }
     // },
+=======
+    async getItem(context, id) {
+      try {
+        return context.state.productList[id];
+      } catch (error) {
+        return null;
+      }
+    },
+>>>>>>> b7828c44c07d0ff15dbd66669be80c26b27a5714
     async getItems(context) {
       try {
         let response = await axios.get("/api/items");
