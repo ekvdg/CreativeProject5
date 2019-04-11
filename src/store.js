@@ -119,8 +119,6 @@ export default new Vuex.Store({
       }
     },
     async updateItem(context, data) {
-      console.log("UPDATE");
-      console.log(data);
       try {
         await axios.put("/api/items/", data);
         return "";

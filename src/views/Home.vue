@@ -49,8 +49,6 @@ export default {
     async addItem(id) {
       try {
         const item = await this.$store.dispatch("getItem", id);
-        console.log("CAKE");
-        console.log(item);
         await this.$store.dispatch("addItem", {
           id: id,
           name: item.name,

@@ -4,7 +4,7 @@
     <div id class="container menu padding-32 white">
 
       <h1><b>{{item.name}}</b>
-        <span class="right tag dark-grey round">${{item.price * item.quantity}}</span>
+        <span class="right tag dark-grey round">${{Math.round((item.price * item.quantity) * 100) / 100}}</span>
         <br><br>
         <span class="right">
           <button v-on:click="addToQuantity(item.id)"><i class="fa fa-arrow-circle-up"></i></button>
@@ -15,6 +15,7 @@
       <p class="text-grey">Quantity: {{item.quantity}}</p>
     </div>
   </div>
+
 
   <br>
   <div class="container menu padding-32 white">
@@ -27,17 +28,22 @@
 <script>
 export default {
   name: 'shoppingcart',
-  props: {
-    items: Array
+  async created() {
+    await this.$store.dispatch("getItems");
+  },
+  computed: {
+    items() {
+      return this.$store.state.items;
+    }
   },
   methods: {
-    addToQuantity(id) {
+    async addToQuantity(id) {
       this.$emit('addOne', id);
     },
-    removeFromQuantity(id) {
+    async removeFromQuantity(id) {
       this.$emit('removeOne', id);
     },
-    deleteItem(id) {
+    async deleteItem(id) {
       this.$emit('deleteItem', id);
     }
   }

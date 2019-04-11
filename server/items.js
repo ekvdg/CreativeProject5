@@ -19,19 +19,26 @@ const itemSchema = new mongoose.Schema({
 const Item = mongoose.model('Item', itemSchema);
 
 router.post("/", auth.verifyToken, User.verify, async (req, res) => {
-  const item = new Item({
-    user: req.user,
-    id: req.body.id,
-    name: req.body.name,
-    price: req.body.price,
-    quantity: req.body.quantity,
-  });
-  try {
+  const item = await Item.findOne({id: req.body.id});
+  if(item != null) {
+    item.quantity = item.quantity + 1;
     await item.save();
-    return res.sendStatus(200);
-  } catch (error) {
-    console.log(error);
-    return res.sendStatus(500);
+    res.send(item);
+  } else {
+    const item = new Item({
+      user: req.user,
+      id: req.body.id,
+      name: req.body.name,
+      price: req.body.price,
+      quantity: req.body.quantity,
+    });
+    try {
+      await item.save();
+      return res.sendStatus(200);
+    } catch (error) {
+      console.log(error);
+      return res.sendStatus(500);
+    }
   }
 });
 
@@ -39,12 +46,10 @@ router.put('/', auth.verifyToken, User.verify, async(req, res) =>{
   try{
     const item = await Item.findOne({id: req.body.id});
     item.quantity = item.quantity + req.body.quantity;
-    console.log(item.quantity);
     if(item.quantity <= 0) {
       item.quantity = 0;
       res.send(false);
     } else {
-      console.log("SAVE");
       await item.save();
       res.send(true);
     }
