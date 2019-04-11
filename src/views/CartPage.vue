@@ -6,15 +6,11 @@
           <h1>{{user.name}}</h1>
         </div>
         <div>
-          <p>
-            <a @click="toggleUpload"><i class="far fa-image"></i></a>
             <a href="#" @click="logout"><i class="fas fa-sign-out-alt"></i></a>
-          </p>
         </div>
       </div>
       <escape-event @escape="escape"></escape-event>
-      <uploader :show="show" @escape="escape"/>
-      <image-gallery :photos="photos" />
+      <shopping-cart :items="items"></shopping-cart>
     </div>
     <div v-else>
       <p>If you would like to upload photos, please register for an account or login.</p>
@@ -26,11 +22,13 @@
 
 <script>
 import EscapeEvent from '@/components/EscapeEvent.vue'
+import ShoppingCart from '@/components/ShoppingCart.vue'
 
 export default {
   name: 'mypage',
   components: {
     EscapeEvent,
+    ShoppingCart,
   },
   data() {
     return {
@@ -41,13 +39,13 @@ export default {
     user() {
       return this.$store.state.user;
     },
-    photos() {
-      return this.$store.state.photos;
+    items() {
+      return this.$store.state.items;
     }
   },
   async created() {
     await this.$store.dispatch("getUser");
-    await this.$store.dispatch("getMyPhotos");
+    await this.$store.dispatch("getItems");
   },
   methods: {
     async logout() {
@@ -57,19 +55,8 @@ export default {
         console.log(error);
       }
     },
-    async uploadFinished() {
-      this.show = false;
-      try {
-        this.error = await this.$store.dispatch("getMyPhotos");
-      } catch (error) {
-        console.log(error);
-      }
-    },
     escape() {
       this.show = false;
-    },
-    toggleUpload() {
-      this.show = true;
     },
   }
 }

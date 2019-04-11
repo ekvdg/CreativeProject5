@@ -53,6 +53,24 @@ export default {
         console.log(error);
       }
     },
+    async deleteItem(id) {
+      await this.$store.dispatch("deleteItem", id)
+    },
+    async addItem(id) {
+      try {
+        const item = await this.$store.dispatch("getItem", id);
+        console.log("PINEAPPLE");
+        console.log(item);
+        await this.$store.dispatch("addItem", {
+          id: this.id,
+          name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
     escape() {
       this.show = false;
     },
