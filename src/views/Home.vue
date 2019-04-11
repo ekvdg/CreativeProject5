@@ -44,10 +44,12 @@ export default {
       }
     },
     async deleteItem(id) {
+      console.log("HOODERFLUFFIN");
       await this.$store.dispatch("deleteItem", id)
     },
     async addItem(id) {
       try {
+        console.log("DORITO");
         const item = await this.$store.dispatch("getItem", id);
         console.log("PINEAPPLE");
         console.log(item);

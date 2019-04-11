@@ -68,7 +68,7 @@ router.get("/", auth.verifyToken, User.verify, async (req, res) => {
     let items = await Item.find({
       user: req.user
     }).populate('user');
-    return res.send(comments);
+    return res.send(items);
   } catch (error) {
     console.log(error);
     return res.sendStatus(500);
