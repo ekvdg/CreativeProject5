@@ -19,6 +19,8 @@ const itemSchema = new mongoose.Schema({
 const Item = mongoose.model('Item', itemSchema);
 
 router.post("/", auth.verifyToken, User.verify, async (req, res) => {
+  console.log("MUFFIN");
+  console.log(req.body);
   const item = new Item({
     user: req.user,
     id: req.body.id,

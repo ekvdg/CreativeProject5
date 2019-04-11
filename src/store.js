@@ -118,6 +118,22 @@ export default new Vuex.Store({
         return error.response.data.message;
       }
     },
+    async deleteItem(context, id) {
+      try {
+        await axios.delete("/api/items" + id);
+        return "";
+      } catch (error) {
+        return error.response.data.message;
+      }
+    },
+    async getItem(context, id) {
+      console.log("MANGO");
+      try {
+        return productList[id];
+      } catch (error) {
+        return null;
+      }
+    },
     async getItems(context) {
       try {
         let response = await axios.get("/api/items");
