@@ -121,23 +121,14 @@ export default new Vuex.Store({
     async deleteItem(context, id) {
       try {
         await axios.delete("/api/items" + id);
-        // context.dispatch('decreasePrice', data);
-        // context.dispatch('decreaseAmount', data);
+        let data = context.state.productList[id];
+        context.dispatch('decreasePrice', data);
+        context.dispatch('decreaseAmount', data);
         return "";
       } catch (error) {
         return error.response.data.message;
       }
     },
-<<<<<<< HEAD
-    // async getItem(context, id) {
-    //   console.log("MANGO");
-    //   try {
-    //     return productList[id];
-    //   } catch (error) {
-    //     return null;
-    //   }
-    // },
-=======
     async getItem(context, id) {
       try {
         return context.state.productList[id];
@@ -145,7 +136,6 @@ export default new Vuex.Store({
         return null;
       }
     },
->>>>>>> b7828c44c07d0ff15dbd66669be80c26b27a5714
     async getItems(context) {
       try {
         let response = await axios.get("/api/items");
