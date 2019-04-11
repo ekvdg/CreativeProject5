@@ -7,15 +7,17 @@
         </div>
         <div>
           <p>
+            <a @click="toggleUpload"><i class="far fa-image"></i></a>
             <a href="#" @click="logout"><i class="fas fa-sign-out-alt"></i></a>
           </p>
         </div>
       </div>
       <escape-event @escape="escape"></escape-event>
-      <item-gallery/>
+      <uploader :show="show" @escape="escape"/>
+      <image-gallery :photos="photos" />
     </div>
     <div v-else>
-      <p>If you would like to browse and add items to your cart, please register for an account or login.</p>
+      <p>If you would like to upload photos, please register for an account or login.</p>
       <router-link to="/register" class="pure-button">Register</router-link> or
       <router-link to="/login" class="pure-button">Login</router-link>
     </div>
@@ -24,13 +26,11 @@
 
 <script>
 import EscapeEvent from '@/components/EscapeEvent.vue'
-import ItemGallery from '@/components/ItemGallery.vue'
 
 export default {
   name: 'mypage',
   components: {
     EscapeEvent,
-    ItemGallery
   },
   data() {
     return {
@@ -41,9 +41,13 @@ export default {
     user() {
       return this.$store.state.user;
     },
+    photos() {
+      return this.$store.state.photos;
+    }
   },
   async created() {
     await this.$store.dispatch("getUser");
+    await this.$store.dispatch("getMyPhotos");
   },
   methods: {
     async logout() {
@@ -53,8 +57,19 @@ export default {
         console.log(error);
       }
     },
+    async uploadFinished() {
+      this.show = false;
+      try {
+        this.error = await this.$store.dispatch("getMyPhotos");
+      } catch (error) {
+        console.log(error);
+      }
+    },
     escape() {
       this.show = false;
+    },
+    toggleUpload() {
+      this.show = true;
     },
   }
 }
