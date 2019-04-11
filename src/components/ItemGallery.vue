@@ -1,137 +1,137 @@
 <template>
-  <div>
-    <div class="row-padding">
-      <div class="third display-container margin-bottom">
-        <img src="images/shirt1.jpg" style="width:100%">
-        <div class="display-upper-middle display-hover">
-          <button v-on:click="addItem(0)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="display-lower-middle display-hover">
-          <button v-on:click="deleteItem(0)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="container white">
-          <p><b>Atom Shirt</b></p>
-          <p>$19.99</p>
-        </div>
+<div>
+  <div class="row-padding">
+    <div class="third display-container margin-bottom">
+      <img src="images/shirt1.jpg" style="width:100%">
+      <div class="display-upper-middle display-hover">
+        <button v-on:click="addItem(0)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
       </div>
-
-      <div class="third display-container margin-bottom">
-        <img src="images/shirt2.png" style="width:100%">
-        <div class="display-upper-middle display-hover">
-          <button v-on:click="addItem(1)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="display-lower-middle display-hover">
-          <button v-on:click="deleteItem(1)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="container white">
-          <p><b>Git Shirt</b></p>
-          <p>$24.99</p>
-        </div>
+      <div class="display-lower-middle display-hover">
+        <button v-on:click="deleteItem(0)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
       </div>
-
-      <div class="third display-container margin-bottom">
-        <img src="images/shirt3.jpg" style="width:100%">
-        <div class="display-upper-middle display-hover">
-          <button v-on:click="addItem(2)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="display-lower-middle display-hover">
-          <button v-on:click="deleteItem(2)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="container white">
-          <p><b>Function shirt</b></p>
-          <p>$14.99</p>
-        </div>
+      <div class="container white">
+        <p><b>Atom Shirt</b></p>
+        <p>$19.99</p>
       </div>
     </div>
 
-    <div class="row-padding">
-      <div class="third display-container margin-bottom">
-        <img src="images/shirt4.png" style="width:100%">
-        <div class="display-upper-middle display-hover">
-          <button v-on:click="addItem(3)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="display-lower-middle display-hover">
-          <button v-on:click="deleteItem(3)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="container white">
-          <p><b>Binary shirt</b></p>
-          <p>$29.99</p>
-        </div>
+    <div class="third display-container margin-bottom">
+      <img src="images/shirt2.png" style="width:100%">
+      <div class="display-upper-middle display-hover">
+        <button v-on:click="addItem(1)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
       </div>
-
-      <div class="third display-container margin-bottom">
-        <img src="images/shirt5.jpg" style="width:100%">
-        <div class="display-upper-middle display-hover">
-          <button v-on:click="addItem(4)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="display-lower-middle display-hover">
-          <button v-on:click="deleteItem(4)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="container white">
-          <p><b>Algebra Shirt</b></p>
-          <p>$14.99</p>
-        </div>
+      <div class="display-lower-middle display-hover">
+        <button v-on:click="deleteItem(1)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
       </div>
-
-      <div class="third display-container margin-bottom">
-        <img src="images/shirt6.jpg" style="width:100%">
-        <div class="display-upper-middle display-hover">
-          <button v-on:click="addItem(5)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="display-lower-middle display-hover">
-          <button v-on:click="deleteItem(5)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="container white">
-          <p><b>Programming Languages Shirt</b></p>
-          <p>$19.99</p>
-        </div>
+      <div class="container white">
+        <p><b>Git Shirt</b></p>
+        <p>$24.99</p>
       </div>
     </div>
 
-    <div class="row-padding">
-      <div class="third display-container margin-bottom">
-        <img src="images/shirt7.jpg" style="width:100%">
-        <div class="display-upper-middle display-hover">
-          <button v-on:click="addItem(6)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="display-lower-middle display-hover">
-          <button v-on:click="deleteItem(6)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="container white">
-          <p><b>HTML Shirt</b></p>
-          <p>$14.99</p>
-        </div>
+    <div class="third display-container margin-bottom">
+      <img src="images/shirt3.jpg" style="width:100%">
+      <div class="display-upper-middle display-hover">
+        <button v-on:click="addItem(2)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
       </div>
-
-      <div class="third display-container margin-bottom">
-        <img src="images/shirt8.jpg" style="width:100%">
-        <div class="display-upper-middle display-hover">
-          <button v-on:click="addItem(7)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="display-lower-middle display-hover">
-          <button v-on:click="deleteItem(7)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="container white">
-          <p><b>CSS Shirt</b></p>
-          <p>$19.99</p>
-        </div>
+      <div class="display-lower-middle display-hover">
+        <button v-on:click="deleteItem(2)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
       </div>
-
-      <div class="third display-container margin-bottom">
-        <img src="images/shirt9.jpg" style="width:100%">
-        <div class="display-upper-middle display-hover">
-          <button v-on:click="addItem(8)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="display-lower-middle display-hover">
-          <button v-on:click="deleteItem(8)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
-        </div>
-        <div class="container white">
-          <p><b>Pi Shirt</b></p>
-          <p>$14.99</p>
-        </div>
+      <div class="container white">
+        <p><b>Function shirt</b></p>
+        <p>$14.99</p>
       </div>
     </div>
   </div>
+
+  <div class="row-padding">
+    <div class="third display-container margin-bottom">
+      <img src="images/shirt4.png" style="width:100%">
+      <div class="display-upper-middle display-hover">
+        <button v-on:click="addItem(3)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
+      </div>
+      <div class="display-lower-middle display-hover">
+        <button v-on:click="deleteItem(3)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
+      </div>
+      <div class="container white">
+        <p><b>Binary shirt</b></p>
+        <p>$29.99</p>
+      </div>
+    </div>
+
+    <div class="third display-container margin-bottom">
+      <img src="images/shirt5.jpg" style="width:100%">
+      <div class="display-upper-middle display-hover">
+        <button v-on:click="addItem(4)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
+      </div>
+      <div class="display-lower-middle display-hover">
+        <button v-on:click="deleteItem(4)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
+      </div>
+      <div class="container white">
+        <p><b>Algebra Shirt</b></p>
+        <p>$14.99</p>
+      </div>
+    </div>
+
+    <div class="third display-container margin-bottom">
+      <img src="images/shirt6.jpg" style="width:100%">
+      <div class="display-upper-middle display-hover">
+        <button v-on:click="addItem(5)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
+      </div>
+      <div class="display-lower-middle display-hover">
+        <button v-on:click="deleteItem(5)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
+      </div>
+      <div class="container white">
+        <p><b>Programming Languages Shirt</b></p>
+        <p>$19.99</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-padding">
+    <div class="third display-container margin-bottom">
+      <img src="images/shirt7.jpg" style="width:100%">
+      <div class="display-upper-middle display-hover">
+        <button v-on:click="addItem(6)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
+      </div>
+      <div class="display-lower-middle display-hover">
+        <button v-on:click="deleteItem(6)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
+      </div>
+      <div class="container white">
+        <p><b>HTML Shirt</b></p>
+        <p>$14.99</p>
+      </div>
+    </div>
+
+    <div class="third display-container margin-bottom">
+      <img src="images/shirt8.jpg" style="width:100%">
+      <div class="display-upper-middle display-hover">
+        <button v-on:click="addItem(7)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
+      </div>
+      <div class="display-lower-middle display-hover">
+        <button v-on:click="deleteItem(7)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
+      </div>
+      <div class="container white">
+        <p><b>CSS Shirt</b></p>
+        <p>$19.99</p>
+      </div>
+    </div>
+
+    <div class="third display-container margin-bottom">
+      <img src="images/shirt9.jpg" style="width:100%">
+      <div class="display-upper-middle display-hover">
+        <button v-on:click="addItem(8)" class="button black extra_padding">Add to cart <i class="fa fa-shopping-cart"></i></button>
+      </div>
+      <div class="display-lower-middle display-hover">
+        <button v-on:click="deleteItem(8)" class="button black margin-top">Delete from cart <i class="fa fa-shopping-cart"></i></button>
+      </div>
+      <div class="container white">
+        <p><b>Pi Shirt</b></p>
+        <p>$14.99</p>
+      </div>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
@@ -149,91 +149,394 @@ export default {
 </script>
 
 <style scoped>
-.third {
-  width: 33.33333%
+:root {
+  --primaryColor: #7840AF;
+  --primaryLightColor: #2D6AAA;
+  --primaryDarkColor: #012C59;
+  --secondaryColor: #E0B31A;
+  --secondaryLightColor: #E0CC1A;
+  --secondaryDarkColor: #E0A71A;
+
+  --red: #ff2542;
+  --green: #2DCC70;
+  --yellow: #ffeb3b;
+  --blue: #1e90ff;
+  --white: #fff;
+  --black: #000;
+  --grey: #616161;
+  --light-grey: #f1f1f1;
+  --dark-grey: #808080;
+
+  --text-primaryColor: #1e90ff;
+  --text-primaryLightColor: #60b0ff;
+  --text-primaryDarkColor: #186ec2;
+  --text-secondaryColor: #ff4081;
+  --text-secondaryLightColor: #ff79b0;
+  --text-secondaryDarkColor: #c60055;
+
+  --text-red: #ff2542;
+  --text-green: #2DCC70;
+  --text-yellow: #ffeb3b;
+  --text-blue: #1e90ff;
+  --text-white: #fff;
+  --text-black: #000;
+  --text-grey: #757575;
+  --text-light-grey: #f1f1f1;
+  --text-dark-grey: #3a3a3a;
 }
 
-.white, .hover-white:hover {
-  color: #000 !important;
-  background-color: #fff !important
+/* Standard Across Projects */
+html {
+  box-sizing: border-box
 }
 
-.container, .panel {
-  padding: 0.01em 16px
+*,
+*:before,
+*:after {
+  box-sizing: inherit
 }
 
-.extra_padding {
-  padding-left: 36px;
-  padding-right: 36px;
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
 }
 
-.display-container:hover .display-hover {
+body {
+  margin: 0
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
   display: block
 }
 
-.display-container:hover span.display-hover {
+audio,
+canvas,
+progress,
+video {
   display: inline-block
 }
 
-.tooltip, .display-container {
-  position: relative
+progress {
+  vertical-align: baseline
 }
 
-.margin-top {
-  margin-top: 16px !important
+audio:not([controls]) {
+  display: none;
+  height: 0
 }
 
-.margin-bottom {
-  margin-bottom: 16px !important
-}
-
-.display-hover {
+[hidden],
+template {
   display: none
 }
 
-.display-upper-middle{
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%)
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects
 }
 
-.display-lower-middle{
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%)
+a:active,
+a:hover {
+  outline-width: 0
 }
 
-.display-middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%)
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted
 }
 
-.button:hover {
-  color: #000 !important;
-  background-color: #fff !important
+dfn {
+  font-style: italic
 }
 
-button, input, select, textarea {
+mark {
+  background: #ff0;
+  color: #000
+}
+
+small {
+  font-size: 80%
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline
+}
+
+sub {
+  bottom: -0.25em
+}
+
+sup {
+  top: -0.5em
+}
+
+figure {
+  margin: 1em 40px
+}
+
+img {
+  border-style: none
+}
+
+svg:not(:root) {
+  overflow: hidden
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible
+}
+
+button,
+input,
+select,
+textarea {
   font: inherit;
   margin: 0
 }
 
-button, input {
+optgroup {
+  font-weight: bold
+}
+
+button,
+input {
   overflow: visible
 }
 
-button, select {
+button,
+select {
   text-transform: none
 }
 
-.btn, .button {
+button,
+html [type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: .35em .625em .75em
+}
+
+legend {
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal
+}
+
+textarea {
+  overflow: auto
+}
+
+[type=checkbox],
+[type=radio] {
+  padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px
+}
+
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none
+}
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit
+}
+
+/* End extract */
+
+html,
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.5
+}
+
+html {
+  overflow-x: hidden
+}
+
+h1 {
+  font-size: 36px
+}
+
+h2 {
+  font-size: 30px
+}
+
+h3 {
+  font-size: 24px
+}
+
+h4 {
+  font-size: 20px
+}
+
+h5 {
+  font-size: 18px
+}
+
+h6 {
+  font-size: 16px
+}
+
+.serif {
+  font-family: serif
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  margin: 10px 0
+}
+
+.wide {
+  letter-spacing: 4px
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 20px 0
+}
+
+.image {
+  max-width: 100%;
+  height: auto
+}
+
+img {
+  vertical-align: middle
+}
+
+a {
+  color: inherit
+}
+
+.table,
+.table-all {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table
+}
+
+.table-all {
+  border: 1px solid #ccc
+}
+
+.bordered tr,
+.table-all tr {
+  border-bottom: 1px solid #ddd
+}
+
+.striped tbody tr:nth-child(even) {
+  background-color: #f1f1f1
+}
+
+.table-all tr:nth-child(odd) {
+  background-color: #fff
+}
+
+.table-all tr:nth-child(even) {
+  background-color: #f1f1f1
+}
+
+.hoverable tbody tr:hover,
+.ul.hoverable li:hover {
+  background-color: #ccc
+}
+
+.centered tr th,
+.centered tr td {
+  text-align: center
+}
+
+.table td,
+.table th,
+.table-all td,
+.table-all th {
+  padding: 8px 8px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: top
+}
+
+.table th:first-child,
+.table td:first-child,
+.table-all th:first-child,
+.table-all td:first-child {
+  padding-left: 16px
+}
+
+.btn,
+.button {
   border: none;
   display: inline-block;
   outline: 0;
@@ -248,30 +551,1403 @@ button, select {
   white-space: nowrap
 }
 
-.container:after, .container:before, .panel:after, .panel:before, .row:after, .row:before, .row-padding:after, .row-padding:before,
-.cell-row:before, .cell-row:after, .clear:after, .clear:before, .bar:before, .bar:after {
-  content: "";
-  display: table;
-  clear: both
+.extra_padding {
+  padding-left: 36px;
+  padding-right: 36px;
 }
 
-.bar-block .dropdown-hover .button, .bar-block .dropdown-click .button {
+.btn:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.btn,
+.button {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.disabled,
+.btn:disabled,
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.3
+}
+
+.disabled *,
+:disabled * {
+  pointer-events: none
+}
+
+.btn.disabled:hover,
+.btn:disabled:hover {
+  box-shadow: none
+}
+
+.badge,
+.tag {
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center
+}
+
+.badge {
+  border-radius: 50%
+}
+
+.ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0
+}
+
+.ul li {
+  padding: 8px 16px;
+  border-bottom: 1px solid #ddd
+}
+
+.ul li:last-child {
+  border-bottom: none
+}
+
+.tooltip,
+.display-container {
+  position: relative
+}
+
+.tooltip .text {
+  display: none
+}
+
+.tooltip:hover .text {
+  display: inline-block
+}
+
+.ripple:active {
+  opacity: 0.5
+}
+
+.ripple {
+  transition: opacity 0s
+}
+
+.input {
+  padding: 8px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%
+}
+
+.error-input {
+  background-color: #ff2542 !important
+}
+
+.select {
+  padding: 9px 0;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc
+}
+
+.dropdown-click,
+.dropdown-hover {
+  position: relative;
+  display: inline-block;
+  cursor: pointer
+}
+
+.dropdown-hover:hover .dropdown-content {
+  display: block
+}
+
+.dropdown-hover:first-child,
+.dropdown-click:hover {
+  background-color: #ccc;
+  color: #000
+}
+
+.dropdown-hover:hover>.button:first-child,
+.dropdown-click:hover>.button:first-child {
+  background-color: #ccc;
+  color: #000
+}
+
+.dropdown-content {
+  cursor: auto;
+  color: #000;
+  background-color: #fff;
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  margin: 0;
+  padding: 0;
+  z-index: 1
+}
+
+.check,
+.radio {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: 6px
+}
+
+.sidebar {
+  height: 100%;
+  width: 200px;
+  background-color: #fff;
+  position: fixed !important;
+  z-index: 1;
+  overflow: auto
+}
+
+.bar-block .dropdown-hover,
+.bar-block .dropdown-click {
+  width: 100%
+}
+
+.bar-block .dropdown-hover .dropdown-content,
+.bar-block .dropdown-click .dropdown-content {
+  min-width: 100%
+}
+
+.bar-block .dropdown-hover .button,
+.bar-block .dropdown-click .button {
   width: 100%;
   text-align: left;
   padding: 8px 16px
 }
 
-.row-padding, .row-padding > .half, .row-padding > .third, .row-padding > .twothird, .row-padding > .threequarter, .row-padding > .quarter, .row-padding > .col {
-  padding: 0 32px
+.main,
+#main {
+  transition: margin-left .4s
+}
+
+.modal {
+  z-index: 3;
+  display: none;
+  padding-top: 100px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4)
+}
+
+.modal-content {
+  margin: auto;
+  background-color: #fff;
+  position: relative;
+  padding: 0;
+  outline: 0;
+  width: 600px
+}
+
+.bar {
+  width: 100%;
+  overflow: hidden
+}
+
+.center .bar {
+  display: inline-block;
+  width: auto
+}
+
+.center-half {
+  width: auto;
+  max-width: 1024px;
+  margin: auto;
+}
+
+.bar .bar-item {
+  padding: 8px 16px;
+  float: left;
+  width: auto;
+  border: none;
+  outline: none;
+  display: block
+}
+
+.bar .dropdown-hover,
+.bar .dropdown-click {
+  position: static;
+  float: left
 }
 
 .bar .button {
   white-space: normal
 }
 
-.black, .hover-black:hover {
+.bar-block .bar-item {
+  width: 100%;
+  display: block;
+  padding: 8px 16px;
+  text-align: left;
+  border: none;
+  outline: none;
+  white-space: normal;
+  float: none
+}
+
+.bar-block.center .bar-item {
+  text-align: center
+}
+
+.block {
+  display: block;
+  width: 100%
+}
+
+.responsive {
+  display: block;
+  overflow-x: auto
+}
+
+.container:after,
+.container:before,
+.panel:after,
+.panel:before,
+.row:after,
+.row:before,
+.row-padding:after,
+.row-padding:before,
+.cell-row:before,
+.cell-row:after,
+.clear:after,
+.clear:before,
+.bar:before,
+.bar:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.col,
+.half,
+.third,
+.twothird,
+.threequarter,
+.quarter {
+  float: left;
+  width: 100%
+}
+
+.col.s1 {
+  width: 8.33333%
+}
+
+.col.s2 {
+  width: 16.66666%
+}
+
+.col.s3 {
+  width: 24.99999%
+}
+
+.col.s4 {
+  width: 33.33333%
+}
+
+.col.s5 {
+  width: 41.66666%
+}
+
+.col.s6 {
+  width: 49.99999%
+}
+
+.col.s7 {
+  width: 58.33333%
+}
+
+.col.s8 {
+  width: 66.66666%
+}
+
+.col.s9 {
+  width: 74.99999%
+}
+
+.col.s10 {
+  width: 83.33333%
+}
+
+.col.s11 {
+  width: 91.66666%
+}
+
+.col.s12 {
+  width: 99.99999%
+}
+
+@media (min-width:601px) {
+  .col.m1 {
+    width: 8.33333%
+  }
+
+  .col.m2 {
+    width: 16.66666%
+  }
+
+  .col.m3,
+  .quarter {
+    width: 24.99999%
+  }
+
+  .col.m4,
+  .third {
+    width: 33.33333%
+  }
+
+  .col.m5 {
+    width: 41.66666%
+  }
+
+  .col.m6,
+  .half {
+    width: 49.99999%
+  }
+
+  .col.m7 {
+    width: 58.33333%
+  }
+
+  .col.m8,
+  .twothird {
+    width: 66.66666%
+  }
+
+  .col.m9,
+  .threequarter {
+    width: 74.99999%
+  }
+
+  .col.m10 {
+    width: 83.33333%
+  }
+
+  .col.m11 {
+    width: 91.66666%
+  }
+
+  .col.m12 {
+    width: 99.99999%
+  }
+}
+
+@media (min-width:993px) {
+  .col.l1 {
+    width: 8.33333%
+  }
+
+  .col.l2 {
+    width: 16.66666%
+  }
+
+  .col.l3 {
+    width: 24.99999%
+  }
+
+  .col.l4 {
+    width: 33.33333%
+  }
+
+  .col.l5 {
+    width: 41.66666%
+  }
+
+  .col.l6 {
+    width: 49.99999%
+  }
+
+  .col.l7 {
+    width: 58.33333%
+  }
+
+  .col.l8 {
+    width: 66.66666%
+  }
+
+  .col.l9 {
+    width: 74.99999%
+  }
+
+  .col.l10 {
+    width: 83.33333%
+  }
+
+  .col.l11 {
+    width: 91.66666%
+  }
+
+  .col.l12 {
+    width: 99.99999%
+  }
+}
+
+.content {
+  max-width: 980px;
+  margin: auto
+}
+
+.rest {
+  overflow: hidden
+}
+
+.cell-row {
+  display: table;
+  width: 100%
+}
+
+.cell {
+  display: table-cell
+}
+
+.cell-top {
+  vertical-align: top
+}
+
+.cell-middle {
+  vertical-align: middle
+}
+
+.cell-bottom {
+  vertical-align: bottom
+}
+
+.hide {
+  display: none !important
+}
+
+.show-block,
+.show {
+  display: block !important
+}
+
+.show-inline-block {
+  display: inline-block !important
+}
+
+@media (max-width:600px) {
+  .modal-content {
+    margin: 0 10px;
+    width: auto !important
+  }
+
+  .modal {
+    padding-top: 30px
+  }
+
+  .dropdown-hover.mobile .dropdown-content,
+  .dropdown-click.mobile .dropdown-content {
+    position: relative
+  }
+
+  .hide-small {
+    display: none !important
+  }
+
+  .mobile {
+    display: block;
+    width: 100% !important
+  }
+
+  .bar-item.mobile,
+  .dropdown-hover.mobile,
+  .dropdown-click.mobile {
+    text-align: center
+  }
+
+  .dropdown-hover.mobile,
+  .dropdown-hover.mobile .btn,
+  .dropdown-hover.mobile .button,
+  .dropdown-click.mobile,
+  .dropdown-click.mobile .btn,
+  .dropdown-click.mobile .button {
+    width: 100%
+  }
+}
+
+@media (max-width:768px) {
+  .modal-content {
+    width: 500px
+  }
+
+  .modal {
+    padding-top: 50px
+  }
+}
+
+@media (min-width:993px) {
+  .modal-content {
+    width: 900px
+  }
+
+  .hide-large {
+    display: none !important
+  }
+
+  .sidebar.collapse {
+    display: block !important
+  }
+}
+
+@media (max-width:992px) and (min-width:601px) {
+  .hide-medium {
+    display: none !important
+  }
+}
+
+@media (max-width:992px) {
+  .sidebar.collapse {
+    display: none
+  }
+
+  .main {
+    margin-left: 0 !important;
+    margin-right: 0 !important
+  }
+}
+
+.top,
+.bottom {
+  position: fixed;
+  width: 100%;
+  z-index: 1
+}
+
+.top {
+  top: 0
+}
+
+.bottom {
+  bottom: 0
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2
+}
+
+.display-topleft {
+  position: absolute;
+  left: 0;
+  top: 0
+}
+
+.display-topright {
+  position: absolute;
+  right: 0;
+  top: 0
+}
+
+.display-bottomleft {
+  position: absolute;
+  left: 0;
+  bottom: 0
+}
+
+.display-bottomright {
+  position: absolute;
+  right: 0;
+  bottom: 0
+}
+
+.display-upper-middle {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.display-lower-middle {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.display-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.display-left {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(0%, -50%);
+  -ms-transform: translate(-0%, -50%)
+}
+
+.display-right {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%)
+}
+
+.display-topmiddle {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%)
+}
+
+.display-bottommiddle {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%)
+}
+
+.display-container:hover .display-hover {
+  display: block
+}
+
+.display-container:hover span.display-hover {
+  display: inline-block
+}
+
+.display-hover {
+  display: none
+}
+
+.display-position {
+  position: absolute
+}
+
+.circle {
+  border-radius: 50%
+}
+
+.round-small {
+  border-radius: 2px
+}
+
+.round,
+.round-medium {
+  border-radius: 4px
+}
+
+.round-large {
+  border-radius: 8px
+}
+
+.round-xlarge {
+  border-radius: 16px
+}
+
+.round-xxlarge {
+  border-radius: 32px
+}
+
+.row-padding,
+.row-padding>.half,
+.row-padding>.third,
+.row-padding>.twothird,
+.row-padding>.threequarter,
+.row-padding>.quarter,
+.row-padding>.col {
+  padding: 0 32px
+}
+
+.container,
+.panel {
+  padding: 0.01em 16px
+}
+
+.panel {
+  margin-top: 16px;
+  margin-bottom: 16px
+}
+
+.code,
+.codespan {
+  font-family: Consolas, "courier new";
+  font-size: 16px
+}
+
+.code {
+  width: auto;
+  background-color: #fff;
+  padding: 8px 12px;
+  border-left: 4px solid #4CAF50;
+  word-wrap: break-word
+}
+
+.codespan {
+  color: crimson;
+  background-color: #f1f1f1;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 110%
+}
+
+.card,
+.card-2 {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
+}
+
+.card-4,
+.hover-shadow:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.spin {
+  animation: spin 2s infinite linear
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(359deg)
+  }
+}
+
+.animate-fading {
+  animation: fading 10s infinite
+}
+
+@keyframes fading {
+  0% {
+    opacity: 0
+  }
+
+  50% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 0
+  }
+}
+
+.animate-opacity {
+  animation: opac 0.8s
+}
+
+@keyframes opac {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+.animate-top {
+  position: relative;
+  animation: animatetop 0.4s
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+.animate-left {
+  position: relative;
+  animation: animateleft 0.4s
+}
+
+@keyframes animateleft {
+  from {
+    left: -300px;
+    opacity: 0
+  }
+
+  to {
+    left: 0;
+    opacity: 1
+  }
+}
+
+.animate-right {
+  position: relative;
+  animation: animateright 0.4s
+}
+
+@keyframes animateright {
+  from {
+    right: -300px;
+    opacity: 0
+  }
+
+  to {
+    right: 0;
+    opacity: 1
+  }
+}
+
+.animate-bottom {
+  position: relative;
+  animation: animatebottom 0.4s
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -300px;
+    opacity: 0
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1
+  }
+}
+
+.animate-zoom {
+  animation: animatezoom 0.6s
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+.animate-input {
+  transition: width 0.4s ease-in-out
+}
+
+.animate-input:focus {
+  width: 100% !important
+}
+
+.opacity,
+.hover-opacity:hover {
+  opacity: 0.60
+}
+
+.opacity-off,
+.hover-opacity-off:hover {
+  opacity: 1
+}
+
+.opacity-max {
+  opacity: 0.25
+}
+
+.opacity-min {
+  opacity: 0.75
+}
+
+.greyscale-max,
+.grayscale-max,
+.hover-greyscale:hover,
+.hover-grayscale:hover {
+  filter: grayscale(100%)
+}
+
+.greyscale,
+.grayscale {
+  filter: grayscale(75%)
+}
+
+.greyscale-min,
+.grayscale-min {
+  filter: grayscale(50%)
+}
+
+.sepia {
+  filter: sepia(75%)
+}
+
+.sepia-max,
+.hover-sepia:hover {
+  filter: sepia(100%)
+}
+
+.sepia-min {
+  filter: sepia(50%)
+}
+
+.tiny {
+  font-size: 10px !important
+}
+
+.small {
+  font-size: 12px !important
+}
+
+.medium {
+  font-size: 15px !important
+}
+
+.large {
+  font-size: 18px !important
+}
+
+.xlarge {
+  font-size: 24px !important
+}
+
+.xxlarge {
+  font-size: 36px !important
+}
+
+.xxxlarge {
+  font-size: 48px !important
+}
+
+.jumbo {
+  font-size: 64px !important
+}
+
+.main-title-size {
+  font-size: 128px !important
+}
+
+.left-align {
+  text-align: left !important
+}
+
+.right-align {
+  text-align: right !important
+}
+
+.justify {
+  text-align: justify !important
+}
+
+.center {
+  text-align: center !important
+}
+
+.border-0 {
+  border: 0 !important
+}
+
+.border {
+  border: 1px solid #ccc !important
+}
+
+.border-top {
+  border-top: 1px solid #ccc !important
+}
+
+.border-bottom {
+  border-bottom: 1px solid #ccc !important
+}
+
+.border-left {
+  border-left: 1px solid #ccc !important
+}
+
+.border-right {
+  border-right: 1px solid #ccc !important
+}
+
+.topbar {
+  border-top: 6px solid #ccc !important
+}
+
+.bottombar {
+  border-bottom: 6px solid #ccc !important
+}
+
+.leftbar {
+  border-left: 6px solid #ccc !important
+}
+
+.rightbar {
+  border-right: 6px solid #ccc !important
+}
+
+.section,
+.code {
+  margin-top: 16px !important;
+  margin-bottom: 16px !important
+}
+
+.margin {
+  margin: 16px !important
+}
+
+.margin-top {
+  margin-top: 16px !important
+}
+
+.margin-bottom {
+  margin-bottom: 16px !important
+}
+
+.margin-left {
+  margin-left: 16px !important
+}
+
+.margin-right {
+  margin-right: 16px !important
+}
+
+.padding-small {
+  padding: 4px 8px !important
+}
+
+.padding {
+  padding: 8px 16px !important
+}
+
+.padding-large {
+  padding: 12px 24px !important
+}
+
+.padding-16 {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important
+}
+
+.padding-24 {
+  padding-top: 24px !important;
+  padding-bottom: 24px !important
+}
+
+.padding-32 {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important
+}
+
+.padding-48 {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important
+}
+
+.padding-64 {
+  padding-top: 64px !important;
+  padding-bottom: 64px !important
+}
+
+.padding-128 {
+  padding-top: 128px !important;
+  padding-bottom: 128px !important
+}
+
+.padding-256 {
+  padding-top: 256px !important;
+  padding-bottom: 256px !important
+}
+
+.left {
+  float: left !important
+}
+
+.right {
+  float: right !important
+}
+
+.button:hover {
+  color: #000 !important;
+  background-color: #fff !important
+}
+
+.transparent,
+.hover-none:hover {
+  background-color: transparent !important
+}
+
+.hover-none:hover {
+  box-shadow: none !important
+}
+
+
+/* COLORS */
+/* Main Colors */
+.primaryColor,
+.hover-primaryColor:hover {
+  color: #fff !important;
+  background-color: #7840AF !important
+}
+
+.primaryLightColor,
+.hover-primaryLightColor:hover {
+  color: #fff !important;
+  background-color: #2D6AAA !important
+}
+
+.primaryDarkColor,
+.hover-primaryDarkColor:hover {
+  color: #fff !important;
+  background-color: #012C59 !important
+}
+
+.secondaryColor,
+.hover-secondaryColor:hover {
+  color: #fff !important;
+  background-color: #E0B31A !important
+}
+
+.secondaryLightColor,
+.hover-secondaryLightColor:hover {
+  color: #fff !important;
+  background-color: #E0CC1A !important
+}
+
+.secondaryDarkColor,
+.hover-secondaryDarkColor:hover {
+  color: #fff !important;
+  background-color: #E0A71A !important
+}
+
+.red,
+.hover-red:hover {
+  color: #fff !important;
+  background-color: var(--red) !important
+}
+
+.green,
+.hover-green:hover {
+  color: #fff !important;
+  background-color: var(--green) !important
+}
+
+.yellow,
+.hover-green:hover {
+  color: #fff !important;
+  background-color: var(--yellow) !important
+}
+
+.blue,
+.hover-blue:hover {
+  color: #fff !important;
+  background-color: var(--blue) !important
+}
+
+.white,
+.hover-white:hover {
+  color: #000 !important;
+  background-color: #fff !important
+}
+
+.black,
+.hover-black:hover {
   color: #fff !important;
   background-color: #000 !important
 }
 
+.grey,
+.hover-grey:hover,
+.gray,
+.hover-gray:hover {
+  color: #FFF !important;
+  background-color: #616161 !important;
+}
+
+.light-grey,
+.hover-light-grey:hover,
+.light-gray,
+.hover-light-gray:hover {
+  color: #000 !important;
+  background-color: #f1f1f1 !important
+}
+
+.dark-grey,
+.hover-dark-grey:hover,
+.dark-gray,
+.hover-dark-gray:hover {
+  color: #fff !important;
+  background-color: #808080 !important
+}
+
+/* Text Colors */
+
+.text-primaryColor,
+.hover-text-primaryColor:hover {
+  color: #1e90ff !important
+}
+
+.text-primaryLightColor,
+.hover-text-primaryLightColor:hover {
+  color: #60b0ff !important
+}
+
+.text-primaryDarkColor,
+.hover-text-primaryDarkColor:hover {
+  color: #186ec2 !important
+}
+
+.text-secondaryColor,
+.hover-text-secondaryColor:hover {
+  color: #ff4081 !important
+}
+
+.text-secondaryLightColor,
+.hover-text-secondaryLightColor:hover {
+  color: #ff79b0 !important
+}
+
+.text-secondaryDarkColor,
+.hover-text-secondaryDarkColor:hover {
+  color: #c60055 !important
+}
+
+.text-red,
+.hover-text-red:hover {
+  color: var(--text-red) !important
+}
+
+.text-green,
+.hover-text-green:hover {
+  color: var(--text-green) !important
+}
+
+.text-blue,
+.hover-text-blue:hover {
+  color: var(--text-blue) !important
+}
+
+.text-yellow,
+.hover-text-yellow:hover {
+  color: var(--text-yellow) !important;
+}
+
+.text-white,
+.hover-text-white:hover {
+  color: var(--text-white) !important
+}
+
+.text-black,
+.hover-text-black:hover {
+  color: var(--text-black) !important
+}
+
+.text-grey,
+.hover-text-grey:hover,
+.text-gray,
+.hover-text-gray:hover {
+  color: var(--text-grey) !important
+}
+
+.text-light-grey,
+.hover-text-light-grey:hover,
+.text-light-gray,
+.hover-text-light-gray:hover {
+  color: var(--text-light-grey) !important
+}
+
+.text-dark-grey,
+.hover-text-dark-grey:hover,
+.text-dark-gray,
+.hover-text-dark-gray:hover {
+  color: var(--text-dark-grey) !important
+}
+
+/* Border Colors */
+
+.border-primaryColor,
+.hover-border-primaryColor:hover {
+  color: #1e90ff !important
+}
+
+.border-primaryLightColor,
+.hover-border-primaryLightColor:hover {
+  color: #60b0ff !important
+}
+
+.border-primaryDarkColor,
+.hover-border-primaryDarkColor:hover {
+  color: #186ec2 !important
+}
+
+.border-secondaryColor,
+.hover-border-secondaryColor:hover {
+  color: #ff4081 !important
+}
+
+.border-secondaryLightColor,
+.hover-border-secondaryLightColor:hover {
+  color: #ff79b0 !important
+}
+
+.border-secondaryDarkColor,
+.hover-border-secondaryDarkColor:hover {
+  color: #c60055 !important
+}
+
+.border-red,
+.hover-border-red:hover {
+  color: #ff2542 !important
+}
+
+.border-green,
+.hover-border-green:hover {
+  color: #282 !important
+}
+
+.border-blue,
+.hover-border-blue:hover {
+  color: #1e90ff !important
+}
+
+.border-white,
+.hover-border-white:hover {
+  border-color: #fff !important
+}
+
+.border-black,
+.hover-border-black:hover {
+  border-color: #000 !important
+}
+
+.border-grey,
+.hover-border-grey:hover,
+.border-gray,
+.hover-border-gray:hover {
+  border-color: #9e9e9e !important
+}
+
+.border-light-grey,
+.hover-border-light-grey:hover,
+.border-light-gray,
+.hover-border-light-gray:hover {
+  border-color: #f1f1f1 !important
+}
+
+.border-dark-grey,
+.hover-border-dark-grey:hover,
+.border-dark-gray,
+.hover-border-dark-gray:hover {
+  border-color: #616161 !important
+}
 </style>
