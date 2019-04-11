@@ -117,9 +117,8 @@ export default new Vuex.Store({
       }
     },
     async getItem(context, id) {
-      console.log("MANGO");
       try {
-        return productList[id];
+        return context.state.productList[id];
       } catch (error) {
         return null;
       }

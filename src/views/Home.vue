@@ -2,7 +2,7 @@
 <div>
   <div v-if="user">
     <escape-event @escape="escape"></escape-event>
-    <item-gallery />
+    <item-gallery @addItem="addItem" @deleteItem="deleteItem"/>
   </div>
   <div v-else>
     <p>If you would like to browse and add items to your cart, please register for an account or login.</p>
@@ -44,15 +44,11 @@ export default {
       }
     },
     async deleteItem(id) {
-      console.log("HOODERFLUFFIN");
       await this.$store.dispatch("deleteItem", id)
     },
     async addItem(id) {
       try {
-        console.log("DORITO");
         const item = await this.$store.dispatch("getItem", id);
-        console.log("PINEAPPLE");
-        console.log(item);
         await this.$store.dispatch("addItem", {
           id: this.id,
           name: item.name,
