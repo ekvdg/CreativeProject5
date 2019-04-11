@@ -136,7 +136,7 @@
 
 <script>
 export default {
-  name: 'ItemGallery',
+  name: 'itemgallery',
   methods: {
     deleteItem(id) {
       this.$emit('deleteItem', id);
@@ -1173,7 +1173,7 @@ a {
 
 .display-upper-middle {
   position: absolute;
-  top: 45%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%)
@@ -1181,7 +1181,7 @@ a {
 
 .display-lower-middle {
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%)

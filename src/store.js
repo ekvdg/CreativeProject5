@@ -8,8 +8,10 @@ export default new Vuex.Store({
   state: {
     user: null,
     items: [],
+    totalPrice: 0,
+    totalAmount: 0,
     productList: [{
-      id:'0',
+      id: '0',
       name: 'Atom Shirt',
       price: 19.99,
       quantity: 0
@@ -62,6 +64,12 @@ export default new Vuex.Store({
     setItems(state, items) {
       state.items = items;
     },
+    setPrice(state, price) {
+      state.totalPrice = price;
+    },
+    setAmount(state, amount) {
+      state.totalAmount = amount;
+    }
   },
   actions: {
     async register(context, data) {
@@ -103,14 +111,18 @@ export default new Vuex.Store({
     async addItem(context, data) {
       try {
         await axios.post("/api/items", data);
+        context.dispatch('increasePrice', data);
+        context.dispatch('increaseAmount', data);
         return "";
       } catch (error) {
         return error.response.data.message;
       }
     },
-    async updateItem(context, data, id) {
+    async updateItem(context, data) {
+      console.log("UPDATE");
+      console.log(data);
       try {
-        await axios.put("/api/items" + id, data);
+        await axios.put("/api/items/", data);
         return "";
       } catch (error) {
         return error.response.data.message;
@@ -118,7 +130,9 @@ export default new Vuex.Store({
     },
     async deleteItem(context, id) {
       try {
-        await axios.delete("/api/items" + id);
+        await axios.delete("/api/items/" + id);
+        // context.dispatch('decreasePrice', data);
+        // context.dispatch('decreaseAmount', data);
         return "";
       } catch (error) {
         return error.response.data.message;
@@ -140,5 +154,33 @@ export default new Vuex.Store({
         return "";
       }
     },
+    increasePrice(context, data) {
+      let price = (data.price * data.quantity);
+      price = context.state.totalPrice + price;
+      context.commit('setPrice', price);
+    },
+    increaseAmount(context, data) {
+      let amount = data.quantity;
+      amount = context.state.totalAmount + amount;
+      context.commit('setAmount', amount);
+    },
+    decreasePrice(context, data) {
+      let price = (data.price * data.quantity);
+      price = context.state.totalPrice - price;
+      if (price < 0) {
+        context.commit('setPrice', 0);
+      } else {
+        context.commit('setPrice', price);
+      }
+    },
+    decreaseAmount(context, data) {
+      let amount = data.quantity;
+      amount = context.state.totalAmount - amount;
+      if (amount < 0) {
+        context.commit('setAmount', 0);
+      } else {
+        context.commit('setAmount', amount);
+      }
+    }
   }
 })

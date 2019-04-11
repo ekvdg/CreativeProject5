@@ -35,14 +35,16 @@ router.post("/", auth.verifyToken, User.verify, async (req, res) => {
   }
 });
 
-router.put('/:id', auth.verifyToken, User.verify, async(req, res) =>{
+router.put('/', auth.verifyToken, User.verify, async(req, res) =>{
   try{
-    const item = await Item.findOne({id: req.params.id});
+    const item = await Item.findOne({id: req.body.id});
     item.quantity = item.quantity + req.body.quantity;
+    console.log(item.quantity);
     if(item.quantity <= 0) {
       item.quantity = 0;
       res.send(false);
     } else {
+      console.log("SAVE");
       await item.save();
       res.send(true);
     }
@@ -55,6 +57,7 @@ router.put('/:id', auth.verifyToken, User.verify, async(req, res) =>{
 router.delete('/:id', auth.verifyToken, User.verify, async(req, res) =>{
   try{
     const item = await Item.deleteOne({id: req.params.id});
+    return res.sendStatus(200);
   } catch(error){
     console.log(error);
     res.sendStatus(500);

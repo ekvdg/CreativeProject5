@@ -6,11 +6,11 @@
           <h1>{{user.name}}</h1>
         </div>
         <div>
-            <a href="#" @click="logout"><i class="fas fa-sign-out-alt"></i></a>
+          <a href="#" @click="logout"><i class="fas fa-sign-out-alt"></i></a>
         </div>
       </div>
       <escape-event @escape="escape"></escape-event>
-      <shopping-cart :items="items"></shopping-cart>
+      <shopping-cart :items="items" @addOne="addToQuantity" @removeOne="removeFromQuantity" @deleteItem="deleteItem"></shopping-cart>
     </div>
     <div v-else>
       <p>If you would like to upload photos, please register for an account or login.</p>
@@ -25,7 +25,7 @@ import EscapeEvent from '@/components/EscapeEvent.vue'
 import ShoppingCart from '@/components/ShoppingCart.vue'
 
 export default {
-  name: 'mypage',
+  name: 'cartpage',
   components: {
     EscapeEvent,
     ShoppingCart,
@@ -54,6 +54,24 @@ export default {
       } catch (error) {
         console.log(error);
       }
+    },
+    async addToQuantity(id) {
+      console.log("ADD");
+      this.$store.dispatch("updateItem", {
+        quantity: 1,
+        id: id
+      });
+    },
+    async removeFromQuantity(id) {
+      console.log("REMOVE");
+      this.$store.dispatch("updateItem", {
+        quantity: -1,
+        id: id
+      });
+    },
+    async deleteItem(id) {
+      await this.$store.dispatch("deleteItem", id);
+      await this.$store.dispatch("getItems");
     },
     escape() {
       this.show = false;
