@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
 const mongoose = require('mongoose');
 
 // connect to the database
-mongoose.connect('mongodb://localhost:27017/cart', {
+mongoose.connect('mongodb://localhost:27017/cpcart', {
   useNewUrlParser: true
 });
 

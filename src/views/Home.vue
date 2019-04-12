@@ -1,15 +1,15 @@
 <template>
-<div>
-  <div v-if="user">
-    <escape-event @escape="escape"></escape-event>
-    <item-gallery @addItem="addItem" @deleteItem="deleteItem"/>
+  <div>
+    <div v-if="user">
+      <escape-event @escape="escape"></escape-event>
+      <item-gallery @addItem="addItem" @deleteItem="deleteItem"/>
+    </div>
+    <div v-else>
+      <p>If you would like to browse and add items to your cart, please register for an account or login.</p>
+      <router-link to="/register" class="pure-button">Register</router-link> or
+      <router-link to="/login" class="pure-button">Login</router-link>
+    </div>
   </div>
-  <div v-else>
-    <p>If you would like to browse and add items to your cart, please register for an account or login.</p>
-    <router-link to="/register" class="pure-button">Register</router-link> or
-    <router-link to="/login" class="pure-button">Login</router-link>
-  </div>
-</div>
 </template>
 
 <script>
@@ -44,7 +44,11 @@ export default {
       }
     },
     async deleteItem(id) {
-      await this.$store.dispatch("deleteItem", id)
+      try {
+        await this.$store.dispatch("deleteItem", id)
+      } catch(error) {
+        console.log(error);
+      }
     },
     async addItem(id) {
       try {
