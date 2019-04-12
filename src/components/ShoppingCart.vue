@@ -7,13 +7,14 @@
         <span class="right tag dark-grey round">${{Math.round((item.price * item.quantity) * 100) / 100}}</span>
         <br><br>
         <span class="right">
-          <button v-on:click="addToQuantity(item.id)"><i class="fa fa-arrow-circle-up"></i></button>
-          <button v-on:click="removeFromQuantity(item.id)"><i class="fa fa-arrow-circle-down"></i></button>
-          <button v-on:click="deleteItem(item.id)"><i class="fa fa-trash"></i></button>
+          <button class="smallButton" v-on:click="addToQuantity(item.id)"><i class="fa fa-arrow-circle-up"></i></button>
+          <button class="smallButton" v-on:click="removeFromQuantity(item.id)"><i class="fa fa-arrow-circle-down"></i></button>
+          <button class="smallButton" v-on:click="deleteItem(item.id)"><i class="fa fa-trash"></i></button>
         </span>
       </h1>
       <p class="text-grey">Quantity: {{item.quantity}}</p>
     </div>
+    <br>
   </div>
 
 
@@ -34,6 +35,9 @@ export default {
   computed: {
     items() {
       return this.$store.state.items;
+    },
+    totalPrice() {
+      return this.$store.state.totalPrice;
     }
   },
   methods: {
@@ -69,8 +73,22 @@ export default {
   color: #fff;
   display: inline-block;
   padding-left: 8px;
+  margin-left: 36px;
   padding-right: 8px;
   text-align: center
+}
+
+.smallButton {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block
+}
+
+.container, .panel {
+  padding: 0.01em 16px;
 }
 
 .dark-grey,
@@ -106,72 +124,8 @@ export default {
   border-color: #fff !important
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block
-}
-
-.container:after,
-.container:before,
-.panel:after,
-.panel:before,
-.row:after,
-.row:before,
-.row-padding:after,
-.row-padding:before,
-.cell-row:before,
-.cell-row:after,
-.clear:after,
-.clear:before,
-.bar:before,
-.bar:after {
-  content: "";
-  display: table;
-  clear: both
-}
-
-.display-container:hover .display-hover {
-  display: block
-}
-
-.display-container:hover span.display-hover {
-  display: inline-block
-}
-
 .right {
   float: right !important
 }
 
-.badge,
-.tag {
-  background-color: #000;
-  color: #fff;
-  display: inline-block;
-  padding-left: 8px;
-  padding-right: 8px;
-  text-align: center
-}
-
-.dark-grey {
-  color: #fff !important;
-  background-color: #808080 !important
-}
-
-.round {
-  border-radius: 4px
-}
-
-.text-grey {
-  color: #757575 !important
-}
 </style>

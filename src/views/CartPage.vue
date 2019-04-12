@@ -1,23 +1,23 @@
 <template>
-<div>
-  <div v-if="user">
-    <div class="header">
-      <div>
-        <h1>{{user.name}}</h1>
+  <div>
+    <div v-if="user">
+      <div class="header">
+        <div>
+          <h1>{{user.name}}</h1>
+        </div>
+        <div>
+          <a href="#" @click="logout"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
       </div>
-      <div>
-        <a href="#" @click="logout"><i class="fas fa-sign-out-alt"></i></a>
-      </div>
+      <escape-event @escape="escape"></escape-event>
+      <shopping-cart @addOne="addToQuantity" @removeOne="removeFromQuantity" @deleteItem="deleteItem"></shopping-cart>
     </div>
-    <escape-event @escape="escape"></escape-event>
-    <shopping-cart @addOne="addToQuantity" @removeOne="removeFromQuantity" @deleteItem="deleteItem"></shopping-cart>
+    <div v-else>
+      <p>If you would like to browse and add items to your cart, please register for an account or login.</p>
+      <router-link to="/register" class="pure-button">Register</router-link> or
+      <router-link to="/login" class="pure-button">Login</router-link>
+    </div>
   </div>
-  <div v-else>
-    <p>If you would like to view or update your cart, please register for an account or login.</p>
-    <router-link to="/register" class="pure-button">Register</router-link> or
-    <router-link to="/login" class="pure-button">Login</router-link>
-  </div>
-</div>
 </template>
 
 <script>

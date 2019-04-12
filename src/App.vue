@@ -20,6 +20,10 @@
 <script>
 export default {
   name: 'App',
+  async created() {
+    await this.$store.dispatch("getTotalPrice");
+    await this.$store.dispatch("getTotalAmount");
+  },
   computed: {
     cartAmount() {
       return this.$store.state.totalAmount;

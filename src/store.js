@@ -84,7 +84,9 @@ export default new Vuex.Store({
     async login(context, data) {
       try {
         let response = await axios.post("/api/users/login", data);
-        context.commit('setUser', response.data);
+        await context.commit('setUser', response.data);
+        await context.dispatch('getTotalPrice');
+        await context.dispatch('getTotalAmount');
         return "";
       } catch (error) {
         return error.response.data.message;
@@ -93,7 +95,9 @@ export default new Vuex.Store({
     async logout(context) {
       try {
         await axios.delete("/api/users");
-        context.commit('setUser', null);
+        await context.commit('setUser', null);
+        context.commit('setPrice', 0);
+        context.commit('setAmount', 0);
         return "";
       } catch (error) {
         return error.response.data.message;
@@ -111,8 +115,8 @@ export default new Vuex.Store({
     async addItem(context, data) {
       try {
         await axios.post("/api/items", data);
-        context.dispatch('increasePrice', data);
-        context.dispatch('increaseAmount', data);
+        await context.dispatch('getTotalPrice');
+        await context.dispatch('getTotalAmount');
         return "";
       } catch (error) {
         return error.response.data.message;
@@ -120,7 +124,12 @@ export default new Vuex.Store({
     },
     async updateItem(context, data) {
       try {
-        await axios.put("/api/items/", data);
+        let response = await axios.put("/api/items/", data);
+        if(response.data == false) {
+          await axios.delete("/api/items/" + data.id)
+        }
+        await context.dispatch('getTotalPrice');
+        await context.dispatch('getTotalAmount');
         return "";
       } catch (error) {
         return error.response.data.message;
@@ -128,10 +137,12 @@ export default new Vuex.Store({
     },
     async deleteItem(context, id) {
       try {
+        let data = await axios.get("/api/items/" + id);
         await axios.delete("/api/items/" + id);
-        let data = context.state.productList[id];
-        context.dispatch('decreasePrice', data);
-        context.dispatch('decreaseAmount', data);
+        if(data != null) {
+          await context.dispatch('getTotalPrice');
+          await context.dispatch('getTotalAmount');
+        }
         return "";
       } catch (error) {
         return error.response.data.message;
@@ -153,33 +164,23 @@ export default new Vuex.Store({
         return "";
       }
     },
-    increasePrice(context, data) {
-      let price = (data.price * data.quantity);
-      price = context.state.totalPrice + price;
-      context.commit('setPrice', price);
-    },
-    increaseAmount(context, data) {
-      let amount = data.quantity;
-      amount = context.state.totalAmount + amount;
-      context.commit('setAmount', amount);
-    },
-    decreasePrice(context, data) {
-      let price = (data.price * data.quantity);
-      price = context.state.totalPrice - price;
-      if (price < 0) {
+    async getTotalPrice(context) {
+      await context.dispatch('getItems');
+      if(context.state.items.length === 0) {
         context.commit('setPrice', 0);
       } else {
-        context.commit('setPrice', price);
+        let totalPrice = context.state.items.reduce((total,item) => {return total += (item.quantity * item.price)}, 0);
+        context.commit('setPrice', Math.round(totalPrice * 100) / 100);
       }
     },
-    decreaseAmount(context, data) {
-      let amount = data.quantity;
-      amount = context.state.totalAmount - amount;
-      if (amount < 0) {
+    async getTotalAmount(context) {
+      await context.dispatch('getItems');
+      if(context.state.items.length === 0) {
         context.commit('setAmount', 0);
       } else {
-        context.commit('setAmount', amount);
+        let totalAmount = context.state.items.reduce((total,item) => {return total += item.quantity}, 0);
+        context.commit('setAmount', totalAmount);
       }
-    }
+    },
   }
 })

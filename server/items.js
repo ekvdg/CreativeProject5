@@ -81,6 +81,19 @@ router.get("/", auth.verifyToken, User.verify, async (req, res) => {
   }
 });
 
+router.get("/:id", auth.verifyToken, User.verify, async (req, res) => {
+  try {
+    let item = await Item.findOne({
+      user: req.user,
+      id: req.params.id
+    }).populate('user');
+    return res.send(item);
+  } catch (error) {
+    console.log(error);
+    return res.sendStatus(500);
+  }
+});
+
 module.exports = {
   model: Item,
   routes: router,
